@@ -1,8 +1,9 @@
-import { pushToHistory } from '../scripts/router.js';
-
 /**
  * @jest-environment jsdom
  */
+
+import { pushToHistory } from '../scripts/router.js';
+
 describe('pushToHistory tests', () => {
     test('Checks if pushToHistory sets setting state correctly', () => {
         expect(pushToHistory('settings', '').state.page).toBe('settings');

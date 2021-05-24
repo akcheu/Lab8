@@ -20,12 +20,11 @@ If the "headless" field is set to true, then I would expect that the tests would
 
 **5. What would your beforeAll callback look like if you wanted to start from the settings page before every test case?**
    
+We can simulate a click on the settings icon rather than directly going to the URL.
+
 ```
 beforeAll(async () => {
     await page.goto('http://127.0.0.1:5500');
-    await Promise.all([
-        page.waitForNavigation(),
-        page.click('header > img'),
-    ])
+    await page.click('header > img');
   });
 ```
